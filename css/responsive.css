@@ -389,9 +389,15 @@
     }
 
     .testimonial-section--photo {
-        padding-top: 36px;
+        margin-top: -1px;
+        padding-top: 0;
         padding-bottom: 64px;
         background-attachment: scroll;
+    }
+
+    .testimonial-section--photo .section-header {
+        padding-top: 24px;
+        margin-bottom: 28px;
     }
 
     .trust-items {
@@ -605,8 +611,13 @@
     }
 
     .testimonial-section--photo {
-        padding-top: 24px;
+        padding-top: 0;
         padding-bottom: 48px;
+    }
+
+    .testimonial-section--photo .section-header {
+        padding-top: 16px;
+        margin-bottom: 22px;
     }
 
     .page-header--photo {
