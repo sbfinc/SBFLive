@@ -74,6 +74,139 @@
 
 ---
 
+## 🚨 URGENT UPDATE — Local SEO (Rank Page 1 in San Diego Area)
+
+**Goal:** Rank on Google page 1 locally for fence-related searches in San Diego and Chula Vista.
+
+**Primary keyword targets:**
+- San Diego fence
+- Chula Vista fence
+- Fence installation San Diego
+- Fence installation Chula Vista
+- Tennis court fence San Diego
+- Tennis court netting installation
+- Baseball backstop installation San Diego
+- Backstop fence contractor
+- School fence contractor San Diego
+- School site fencing Chula Vista
+- Commercial fence contractor San Diego
+- Chain link fence Chula Vista
+
+**Reality check:** Page 1 is achievable for local + service-specific terms (e.g. "tennis court fence san diego"), not overnight. Broad terms like "fence installation" alone are harder — always pair with **San Diego / Chula Vista**.
+
+---
+
+### Priority 1 — Google Business Profile (biggest lever)
+
+The Google Map pack (3 businesses under the map) often matters more than regular search results for local contractors.
+
+- [ ] Claim/verify Google Business Profile for **South Bay Fence Co.** at 3084 Main St, Chula Vista
+- [ ] Primary category: **Fence contractor** (add secondary categories as relevant)
+- [ ] List services explicitly: fence installation, tennis court fencing, backstops, school site fencing, chain link, gates
+- [ ] Upload 20+ project photos (tennis courts, backstops, school projects, chain link)
+- [ ] Post weekly (new project photo, e.g. "School fence project in Chula Vista")
+- [ ] Ask every happy customer for a **Google review** — one of the strongest local ranking signals
+- [ ] Encourage reviews that mention project type (tennis court, backstop, school) when appropriate
+
+---
+
+### Priority 2 — Fix missing website SEO (not live yet)
+
+| Task | Status | Why it matters |
+|---|---|---|
+| `sitemap.xml` | ❌ Not done | Helps Google find every page |
+| `robots.txt` | ❌ Not done | Tells crawlers what to index |
+| JSON-LD local business schema | ❌ Not done | Tells Google name, address, phone, service area |
+| Google Search Console verification | ❌ Not done | Submit sitemap, monitor indexing |
+| Keyword-focused homepage H1 | ❌ Not done | Current H1 is brand-focused ("Legacy and Experience"), weak for search |
+
+**Homepage H1 suggestion:** Something like *"Commercial Fence Installation in San Diego Since 1960"* with subline mentioning tennis courts, schools, and backstops — without losing brand feel.
+
+---
+
+### Priority 3 — Dedicated service landing pages
+
+Tennis courts, backstops, and schools currently live mostly as **gallery photos** with minimal text. Google needs **dedicated pages** per service.
+
+Create one page per service, each targeting a local keyword:
+
+| Page | Target keyword |
+|---|---|
+| `/fence-installation-san-diego.html` | San Diego fence / fence installation San Diego |
+| `/fence-installation-chula-vista.html` (or combined) | Chula Vista fence |
+| `/tennis-court-fencing-san-diego.html` | Tennis court fence San Diego |
+| `/backstop-installation-san-diego.html` | Baseball backstop installation San Diego |
+| `/school-fencing-san-diego.html` | School fence contractor San Diego |
+
+**Each page must include:**
+- H1 with city + service (e.g. "Tennis Court Fence & Netting Installation — San Diego")
+- 2–3 short paragraphs (what we install, who we serve, 65 years experience)
+- Project photos from gallery (already exist)
+- Service area cities listed (Chula Vista, Coronado, National City, etc.)
+- Phone + Get A Quote CTA
+- Internal links from homepage, footer, gallery, and FAQ
+
+---
+
+### Priority 4 — On-page SEO (every page)
+
+- [ ] **Title tags** with keyword + city: e.g. `Tennis Court Fencing San Diego | South Bay Fence Co.`
+- [ ] **Meta descriptions** mentioning San Diego/Chula Vista + the service
+- [ ] **Alt text** on images with city when relevant: e.g. `Tennis court fence installation Chula Vista` (not just "Tennis court netting")
+- [ ] **Internal links** — FAQ → service pages, gallery → service pages, homepage → service pages
+- [ ] **NAP consistency** — exact same name, address, phone everywhere (website, Google, Yelp, BBB)
+
+---
+
+### Priority 5 — Off-site signals (trust + backlinks)
+
+- [ ] Yelp, BBB, Angi, HomeAdvisor (even free listings help)
+- [ ] San Diego contractor directories
+- [ ] School district vendor lists / past project references (if allowed)
+- [ ] Local chamber of commerce
+- [ ] Links from suppliers or partners
+
+Even 5–10 legitimate local mentions help.
+
+---
+
+### Priority 6 — Reviews + reputation
+
+For schools and commercial work, decision-makers Google before calling.
+
+1. Finish a school or sports project
+2. Ask the contact for a Google review mentioning the project type
+3. Example: *"South Bay Fence installed our tennis court backstop — professional and on time."*
+
+Reviews that mention **tennis**, **backstop**, or **school** reinforce those keywords naturally.
+
+---
+
+### Realistic timeline
+
+| Timeframe | What to expect |
+|---|---|
+| 2–4 weeks | Google indexes new pages + schema (after sitemap + Search Console) |
+| 1–3 months | Movement on long-tail terms (`backstop fence san diego`, `chula vista fence`) |
+| 3–6 months | Stronger map pack presence with steady reviews |
+| 6–12 months | Page 1 possible for niche local terms if consistent |
+
+---
+
+### Implementation checklist (site work)
+
+1. [ ] Google Business Profile — claim, optimize, photos, services
+2. [ ] Google Search Console — verify southbayfence.com, submit sitemap
+3. [ ] `sitemap.xml` + `robots.txt` + JSON-LD on every page
+4. [ ] 4–5 service landing pages (fence install, tennis courts, backstops, schools)
+5. [ ] Homepage H1 + meta tuned for **San Diego fence** / **Chula Vista fence**
+6. [ ] Review campaign — ask every completed job
+7. [ ] Directory listings — consistent NAP on 5–10 sites
+
+**Note:** Google Business Profile and reviews must be done by the owner. Site technical SEO + landing pages can be built in the repo.
+
+---
+
 ## 🗂️ Pages
 
 | Page | Purpose |

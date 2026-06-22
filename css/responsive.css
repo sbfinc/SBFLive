@@ -365,6 +365,16 @@
         max-width: 540px;
     }
 
+    .about-hero-section {
+        padding-top: 112px;
+        padding-bottom: 60px;
+    }
+
+    .gallery-hero-section {
+        padding-top: 112px;
+        padding-bottom: 60px;
+    }
+
     .testimonial-card {
         padding: 40px 32px;
     }
@@ -639,6 +649,16 @@
     .page-header--photo p {
         font-size: 0.98rem;
         line-height: 1.65;
+    }
+
+    .about-hero-section {
+        padding-top: 104px;
+        padding-bottom: 48px;
+    }
+
+    .gallery-hero-section {
+        padding-top: 104px;
+        padding-bottom: 48px;
     }
 
     .specialties-grid,
