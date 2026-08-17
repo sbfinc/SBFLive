@@ -49,7 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (next === current) return;
 
             slides[current].classList.remove('is-active');
-            dots[current] && dots[current].classList.remove('is-active');
+            if (dots[current]) {
+                dots[current].classList.remove('is-active');
+                dots[current].setAttribute('aria-selected', 'false');
+                dots[current].tabIndex = -1;
+            }
 
             const incoming = slides[next];
             // Restart Ken Burns animation cleanly
@@ -57,7 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
             void incoming.offsetWidth;
             incoming.classList.add('is-active');
 
-            dots[next] && dots[next].classList.add('is-active');
+            if (dots[next]) {
+                dots[next].classList.add('is-active');
+                dots[next].setAttribute('aria-selected', 'true');
+                dots[next].tabIndex = 0;
+            }
             current = next;
         };
 
