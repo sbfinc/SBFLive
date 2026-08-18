@@ -34,15 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let timer = null;
         let isPaused = false;
 
-        // Preload every slide image to prevent first-cycle flicker
-        slides.forEach(slide => {
-            const bg = slide.style.backgroundImage;
-            const match = bg && bg.match(/url\(["']?(.+?)["']?\)/);
-            if (match && match[1]) {
-                const img = new Image();
-                img.src = match[1];
-            }
-        });
+        const ensureSlideImage = (slide) => {
+            if (!slide || slide.style.backgroundImage) return;
+            const src = slide.dataset.bg;
+            if (src) slide.style.backgroundImage = `url('${src}')`;
+        };
+
+        const preloadSlide = (slide) => {
+            if (!slide) return;
+            const src = slide.dataset.bg || (slide.style.backgroundImage || '').replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+            if (!src) return;
+            const img = new Image();
+            img.src = src;
+        };
 
         const goTo = (index) => {
             const next = ((index % slides.length) + slides.length) % slides.length;
@@ -56,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const incoming = slides[next];
+            ensureSlideImage(incoming);
             // Restart Ken Burns animation cleanly
             incoming.classList.remove('is-active');
             void incoming.offsetWidth;
@@ -132,6 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
 
         startAutoplay();
+        const nextToWarm = slides[(current + 1) % slides.length];
+        const warm = () => preloadSlide(nextToWarm);
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(warm, { timeout: 2500 });
+        } else {
+            setTimeout(warm, 1500);
+        }
     }
 
     // --- Mobile menu toggle ---
