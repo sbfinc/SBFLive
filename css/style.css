@@ -2515,3 +2515,14 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 body.menu-open {
     overflow: hidden;
 }
+
+/* ===================================
+   Branded 404
+   =================================== */
+.error-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
