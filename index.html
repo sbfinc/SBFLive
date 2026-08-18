@@ -19,11 +19,87 @@
     <meta name="twitter:title" content="South Bay Fence | Commercial Fence Contractor in Chula Vista">
     <meta name="twitter:description" content="Family-owned in Chula Vista since 1960. Commercial chain link, gates, school and park fencing, plus materials for the trade. Call (619) 420-3410.">
     <meta name="twitter:image" content="https://southbayfence.com/images/commercial-iron/Pipe-Arm-Gate-installation-in-San-Diego-Area-1.webp">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <style>
+        :root{--accent:#c8842e;--accent-dark:#a06820;--dark:#0d1117;--white:#fff;--font-sans:Inter,-apple-system,BlinkMacSystemFont,sans-serif;--font-display:"Playfair Display","Playfair Display Fallback",Georgia,serif;--radius:10px;--radius-sm:6px}
+        @font-face{font-family:"Oswald Fallback";src:local("Arial Narrow"),local("Arial");size-adjust:86%;ascent-override:100%;descent-override:24%;line-gap-override:0%}
+        @font-face{font-family:"Playfair Display Fallback";src:local("Georgia");size-adjust:112%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{-webkit-font-smoothing:antialiased}
+        body{font-family:var(--font-sans);font-size:16px;line-height:1.7;background:var(--dark);color:#636e7b;overflow-x:hidden}
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:inherit}
+        ul{list-style:none}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;font-size:.95rem;font-weight:600;border-radius:var(--radius);border:2px solid transparent;font-family:var(--font-sans);white-space:nowrap}
+        .btn-lg{padding:16px 36px;font-size:1rem}
+        .btn-primary{background:var(--accent);color:var(--dark);border-color:var(--accent)}
+        .btn-outline-white{background:transparent;color:var(--white);border-color:rgba(255,255,255,.3)}
+        .navbar{position:sticky;top:0;z-index:1000}
+        .navbar-transparent{position:fixed;top:0;left:0;right:0;background:transparent;border-bottom:1px solid transparent}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;height:76px;gap:24px}
+        .logo-img{height:54px;width:auto;object-fit:contain}
+        .logo-white{display:block}
+        .logo-dark{display:none}
+        .nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+        .nav-links a{padding:8px 16px;font-size:.9rem;font-weight:500;color:rgba(255,255,255,.92);border-radius:var(--radius-sm)}
+        .nav-actions{display:flex;align-items:center;gap:16px;margin-left:8px}
+        .nav-phone{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600;color:var(--white);white-space:nowrap}
+        .nav-quote{padding:10px 22px;font-size:.9rem;border-radius:var(--radius)}
+        .mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+        .mobile-toggle span{width:24px;height:2px;background:var(--white);border-radius:2px}
+        .hero{position:relative;height:100vh;height:100svh;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+        .hero-slides,.hero-slide{position:absolute;inset:0}
+        .hero-slide{background-size:cover;background-position:center;opacity:0}
+        .hero-slide.is-active{opacity:1}
+        .hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(0,0,0,.13) 0%,rgba(0,0,0,.21) 70%,rgba(0,0,0,.28) 100%),linear-gradient(180deg,rgba(0,0,0,.16) 0%,rgba(0,0,0,.06) 35%,rgba(0,0,0,.23) 100%);pointer-events:none}
+        .hero-content{position:relative;z-index:2;padding:60px 0;max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+        .hero h1{font-family:Oswald,"Oswald Fallback",var(--font-sans);color:var(--white);margin:0 auto 20px;max-width:880px;text-shadow:0 2px 20px rgba(0,0,0,.45);font-size:clamp(2.6rem,5.8vw,4.8rem);font-weight:700;letter-spacing:.045em;text-transform:uppercase;line-height:1.2}
+        .highlight{color:var(--accent)}
+        .hero-sub{font-family:var(--font-display);font-style:italic;font-weight:700;font-size:clamp(1.4rem,2.6vw,2rem);color:var(--white);max-width:640px;margin:0 auto 36px;line-height:1.4;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+        .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+        .hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.3);color:var(--white);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;opacity:.75}
+        .hero-prev{left:28px}.hero-next{right:28px}
+        .hero-dots{position:absolute;bottom:152px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
+        .hero-dot{width:30px;height:4px;border-radius:4px;border:none;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
+        .hero-dot.is-active{background:var(--accent);width:48px}
+        @media (max-width:960px){
+            .nav-links,.nav-actions{display:none}
+            .mobile-toggle{display:flex}
+            .nav-inner{height:68px;gap:12px}
+        }
+        @media (max-width:768px){
+            .container{padding:0 20px}
+            .logo-img{height:42px}
+            .hero{min-height:100svh}
+            .hero h1{font-size:clamp(2.15rem,10vw,3.1rem);line-height:1.04}
+            .hero-sub{font-size:1.05rem}
+            .hero-content{padding:92px 0 76px}
+            .hero-arrow{display:none}
+            .hero-dots{bottom:128px}
+            .hero-buttons{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
+            .hero-buttons .btn{width:100%}
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css?v=crit-css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/style.css?v=crit-css"></noscript>
+    <script>
+        window.addEventListener('load', function () {
+            ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'].forEach(function (origin) {
+                var p = document.createElement('link');
+                p.rel = 'preconnect';
+                p.href = origin;
+                if (origin.indexOf('gstatic') !== -1) p.crossOrigin = '';
+                document.head.appendChild(p);
+            });
+            var g = document.createElement('link');
+            g.rel = 'stylesheet';
+            g.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap';
+            document.head.appendChild(g);
+        });
+    </script>
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="css/style.css?v=mobile-css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -256,6 +332,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

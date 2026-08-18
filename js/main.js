@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.remove('scrolled');
             }
         };
-        setScrolled();
+        requestAnimationFrame(setScrolled);
         window.addEventListener('scroll', setScrolled, { passive: true });
     }
 
