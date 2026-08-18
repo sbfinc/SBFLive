@@ -19,12 +19,16 @@
     <meta name="twitter:title" content="South Bay Fence | Commercial Fence Contractor in Chula Vista">
     <meta name="twitter:description" content="Family-owned in Chula Vista since 1960. Commercial chain link, gates, school and park fencing, plus materials for the trade. Call (619) 420-3410.">
     <meta name="twitter:image" content="https://southbayfence.com/images/commercial-iron/Pipe-Arm-Gate-installation-in-San-Diego-Area-1.webp">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/oswald-700-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-700-italic-latin.woff2" crossorigin>
     <style>
         :root{--accent:#c8842e;--accent-dark:#a06820;--dark:#0d1117;--white:#fff;--font-sans:Inter,-apple-system,BlinkMacSystemFont,sans-serif;--font-display:"Playfair Display","Playfair Display Fallback",Georgia,serif;--radius:10px;--radius-sm:6px}
         @font-face{font-family:"Oswald Fallback";src:local("Arial Narrow"),local("Arial");size-adjust:86%;ascent-override:100%;descent-override:24%;line-gap-override:0%}
-        @font-face{font-family:"Playfair Display Fallback";src:local("Georgia");size-adjust:112%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+        @font-face{font-family:"Playfair Display Fallback";font-style:italic;font-weight:700;src:local("Georgia Italic"),local("Georgia");size-adjust:112%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+        @font-face{font-family:"Playfair Display Fallback";font-style:normal;font-weight:700;src:local("Georgia");size-adjust:112%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+        @font-face{font-family:Oswald;font-style:normal;font-weight:700;font-display:swap;src:url(fonts/oswald-700-latin.woff2) format("woff2")}
+        @font-face{font-family:"Playfair Display";font-style:italic;font-weight:700;font-display:swap;src:url(fonts/playfair-display-700-italic-latin.woff2) format("woff2")}
+        @font-face{font-family:"Playfair Display";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/playfair-display-700-latin.woff2) format("woff2")}
         *{margin:0;padding:0;box-sizing:border-box}
         html{-webkit-font-smoothing:antialiased}
         body{font-family:var(--font-sans);font-size:16px;line-height:1.7;background:var(--dark);color:#636e7b;overflow-x:hidden}
@@ -97,10 +101,25 @@
             .stat-block--cities{flex-direction:column;grid-column:span 2;text-align:center}
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=cls-fix" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/style.css?v=cls-fix"></noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="css/style.css?v=m89" media="print" id="full-css">
+    <noscript><link rel="stylesheet" href="css/style.css?v=m89"></noscript>
+    <script>
+        (function () {
+            var css = document.getElementById('full-css');
+            if (!css) return;
+            css.addEventListener('load', function () {
+                requestAnimationFrame(function () { css.media = 'all'; });
+            });
+            function loadInter() {
+                var l = document.createElement('link');
+                l.rel = 'stylesheet';
+                l.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=optional';
+                document.head.appendChild(l);
+            }
+            if ('requestIdleCallback' in window) requestIdleCallback(loadInter, { timeout: 4000 });
+            else window.addEventListener('load', loadInter);
+        })();
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -160,8 +179,8 @@
     <nav class="navbar navbar-transparent" id="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="logo">
-                <img src="images/brand/Logo-wht-version.webp" alt="South Bay Fence, Inc. logo" class="logo-img logo-white" width="350" height="71">
-                <img src="images/brand/logo.webp" alt="South Bay Fence, Inc. logo" class="logo-img logo-dark" width="350" height="71">
+                <img src="images/brand/Logo-wht-version.webp" alt="South Bay Fence, Inc. logo" class="logo-img logo-white" width="350" height="71" fetchpriority="high">
+                <img src="images/brand/logo.webp" alt="South Bay Fence, Inc. logo" class="logo-img logo-dark" width="350" height="71" loading="lazy">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>

@@ -8,13 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     if (navbar) {
         const setScrolled = () => {
-            if (window.scrollY > 60) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
         };
-        requestAnimationFrame(setScrolled);
         window.addEventListener('scroll', setScrolled, { passive: true });
     }
 
@@ -235,32 +230,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Scroll animations ---
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+    // --- Scroll animations (after first paint so we don't force layout) ---
+    const startScrollAnimations = () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.fade-up').forEach(el => {
-        observer.observe(el);
-    });
-
-    // --- Auto-add fade-up to major sections ---
-    const sections = document.querySelectorAll('.section-header, .about-text, .about-images, .service-card, .specialty-card, .specialty-page-card, .testimonial-card, .contact-info-card');
-    sections.forEach((el, i) => {
-        el.classList.add('fade-up');
-        el.style.transitionDelay = `${i * 0.05}s`;
-        observer.observe(el);
-    });
+        const sections = document.querySelectorAll('.section-header, .about-text, .about-images, .service-card, .specialty-card, .specialty-page-card, .testimonial-card, .contact-info-card');
+        sections.forEach((el, i) => {
+            el.classList.add('fade-up');
+            el.style.transitionDelay = `${i * 0.05}s`;
+        });
+        requestAnimationFrame(() => {
+            sections.forEach(el => observer.observe(el));
+        });
+    };
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(startScrollAnimations, { timeout: 2500 });
+    } else {
+        setTimeout(startScrollAnimations, 400);
+    }
 
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
