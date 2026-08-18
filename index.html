@@ -19,6 +19,8 @@
     <meta name="twitter:title" content="South Bay Fence | Commercial Fence Contractor in Chula Vista">
     <meta name="twitter:description" content="Family-owned in Chula Vista since 1960. Commercial chain link, gates, school and park fencing, plus materials for the trade. Call (619) 420-3410.">
     <meta name="twitter:image" content="https://southbayfence.com/images/commercial-iron/Pipe-Arm-Gate-installation-in-San-Diego-Area-1.webp">
+    <link rel="preload" as="image" href="images/misc/AdobeStock_401414377-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="images/misc/AdobeStock_401414377-Large.webp" media="(min-width: 769px)" fetchpriority="high">
     <link rel="preload" as="font" type="font/woff2" href="fonts/oswald-700-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/playfair-display-700-italic-latin.woff2" crossorigin>
     <style>
@@ -57,6 +59,8 @@
         .hero-slides,.hero-slide{position:absolute;inset:0}
         .hero-slide{background-size:cover;background-position:center;opacity:0}
         .hero-slide.is-active{opacity:1}
+        .hero-slide--first{background-image:url(images/misc/AdobeStock_401414377-mobile.webp)}
+        @media (min-width:769px){.hero-slide--first{background-image:url(images/misc/AdobeStock_401414377-Large.webp)}}
         .hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(0,0,0,.13) 0%,rgba(0,0,0,.21) 70%,rgba(0,0,0,.28) 100%),linear-gradient(180deg,rgba(0,0,0,.16) 0%,rgba(0,0,0,.06) 35%,rgba(0,0,0,.23) 100%);pointer-events:none}
         .hero-content{position:relative;z-index:2;padding:60px 0;max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
         .hero h1{font-family:Oswald,"Oswald Fallback",var(--font-sans);color:var(--white);margin:0 auto 20px;max-width:880px;text-shadow:0 2px 20px rgba(0,0,0,.45);font-size:clamp(2.6rem,5.8vw,4.8rem);font-weight:700;letter-spacing:.045em;text-transform:uppercase;line-height:1.2}
@@ -205,7 +209,7 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-slides" id="heroSlides">
-            <div class="hero-slide is-active" style="background-image: url('images/misc/AdobeStock_401414377-Large.webp');"></div>
+            <div class="hero-slide hero-slide--first is-active"></div>
             <div class="hero-slide" data-bg="images/commercial-iron/Pipe-Arm-Gate-installation-in-San-Diego-Area-1.webp"></div>
             <div class="hero-slide" data-bg="images/chain-link/Chain-Link.webp"></div>
         </div>
