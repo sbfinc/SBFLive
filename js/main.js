@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const incoming = slides[next];
             ensureSlideImage(incoming);
-            // Restart Ken Burns animation cleanly
             incoming.classList.remove('is-active');
-            void incoming.offsetWidth;
-            incoming.classList.add('is-active');
+            requestAnimationFrame(() => {
+                incoming.classList.add('is-active');
+            });
 
             if (dots[next]) {
                 dots[next].classList.add('is-active');
