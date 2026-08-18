@@ -39,7 +39,7 @@
         .navbar{position:sticky;top:0;z-index:1000}
         .navbar-transparent{position:fixed;top:0;left:0;right:0;background:transparent;border-bottom:1px solid transparent}
         .nav-inner{display:flex;justify-content:space-between;align-items:center;height:76px;gap:24px}
-        .logo-img{height:54px;width:auto;object-fit:contain}
+        .logo-img{height:54px;width:auto;aspect-ratio:350/71;object-fit:contain}
         .logo-white{display:block}
         .logo-dark{display:none}
         .nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
@@ -64,6 +64,17 @@
         .hero-dots{position:absolute;bottom:152px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
         .hero-dot{width:30px;height:4px;border-radius:4px;border:none;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
         .hero-dot.is-active{background:var(--accent);width:48px}
+        .stats-strip{background:var(--dark);color:var(--white);padding:30px 0 26px;position:relative;z-index:4;margin-top:-128px;border-radius:28px 28px 0 0}
+        .stats-grid{display:grid;grid-template-columns:minmax(160px,210px) minmax(180px,230px) minmax(520px,1fr);gap:28px;align-items:center;text-align:center;max-width:1080px;margin:0 auto}
+        .stat-block{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px;border-right:1px solid rgba(255,255,255,.08)}
+        .stat-block:last-child{border-right:none}
+        .stat-license{color:var(--white);font-family:var(--font-display);font-size:clamp(1.3rem,2vw,1.85rem);font-weight:900;line-height:1.1;white-space:nowrap}
+        .stat-main{display:flex;flex-direction:column;align-items:center;gap:4px}
+        .stat-block--cities{flex-direction:row;justify-content:flex-start;gap:24px;text-align:left}
+        .stat-block .stat-number{font-family:var(--font-display);font-size:clamp(2rem,3.2vw,2.8rem);font-weight:900;color:var(--white);line-height:1}
+        .stat-block .stat-label{font-size:.8rem;color:#adbac7;text-transform:uppercase;letter-spacing:1.5px;font-weight:500}
+        .stat-cities{flex:0 1 620px;max-width:620px;color:#cdd9e5;font-size:.78rem;line-height:1.45}
+        .footer-logo-img{height:60px;width:auto;aspect-ratio:350/71;object-fit:contain}
         @media (max-width:960px){
             .nav-links,.nav-actions{display:none}
             .mobile-toggle{display:flex}
@@ -80,25 +91,15 @@
             .hero-dots{bottom:128px}
             .hero-buttons{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
             .hero-buttons .btn{width:100%}
+            .stats-strip{margin-top:-104px;border-radius:22px 22px 0 0;padding:28px 0 14px}
+            .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px 16px;align-items:start}
+            .stat-block{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:16px}
+            .stat-block--cities{flex-direction:column;grid-column:span 2;text-align:center}
         }
     </style>
-    <link rel="stylesheet" href="css/style.css?v=crit-css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/style.css?v=crit-css"></noscript>
-    <script>
-        window.addEventListener('load', function () {
-            ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'].forEach(function (origin) {
-                var p = document.createElement('link');
-                p.rel = 'preconnect';
-                p.href = origin;
-                if (origin.indexOf('gstatic') !== -1) p.crossOrigin = '';
-                document.head.appendChild(p);
-            });
-            var g = document.createElement('link');
-            g.rel = 'stylesheet';
-            g.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap';
-            document.head.appendChild(g);
-        });
-    </script>
+    <link rel="stylesheet" href="css/style.css?v=cls-fix" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/style.css?v=cls-fix"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
     <script type="application/ld+json">
     {
